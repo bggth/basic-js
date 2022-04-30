@@ -22,8 +22,47 @@ const { NotImplementedError } = require('../extensions/index.js');
  * }
  *
  */
+
+function expandDomain(domain) {
+  let elems = domain.split('.')
+  let result = [];
+  for (let i = 0; i < elems.length; i++)
+    elems[i] = '.' + elems[i];
+
+  let tiny = '';
+  for (let i = elems.length-1; i >= 0; i--) {
+    tiny = tiny + elems[i];
+    result.push(tiny);
+  }
+
+  return result;
+}
+
+function calcElementCount(arr, elem) {
+  let result = 0
+  arr.forEach(e => {
+    if (e==elem)
+      result++;
+  });
+  return result;
+}
+
 function getDNSStats(domains) {
-  console.log(domains);
+  result = new Object();
+  let expandedDomains = [];
+
+  for (let i = 0; i < domains.length; i++) {
+    expandDomain(domains[i]).forEach(e => {
+      expandedDomains.push(e);
+    });;
+  }
+
+  expandedDomains.forEach(elem => {
+    result[elem] = calcElementCount(expandedDomains, elem);
+  });
+
+  return result;
+  
 }
 
 module.exports = {
