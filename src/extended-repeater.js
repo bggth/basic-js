@@ -15,12 +15,28 @@ const { NotImplementedError } = require('../extensions/index.js');
  * => 'STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS'
  *
  */
+function repeat(str, repeatTimes, separator, addition) {
+  let result = ''
+  let repeat = str + addition;
+  result = repeat;
+  while(--repeatTimes) {
+    result = result+separator;
+    result = result+repeat;
+  }
+  return result;
+}
+
 function repeater(str, options) {
   let result = '';
-  
-  result = str.repeat(options.repeatTimes)
+  let separator = options.separator?options.separator:'+';
+  let repeatTimes = options.repeatTimes?options.repeatTimes:1;
+  let addition = options.addition?options.addition:'';
+  let additionRepeatTimes = options.additionRepeatTimes?options.additionRepeatTimes:1;
+  let additionSeparator = options.additionSeparator?options.additionSeparator:'|';
 
-  console.debug(str, result);
+  addition = repeat(addition, additionRepeatTimes, additionSeparator, '');
+  result = repeat(str, repeatTimes, separator, addition);
+  //console.debug(str, result);
 
   return result;
 }
