@@ -43,14 +43,13 @@ class VigenereCipheringMachine {
         result += message[i];
       }
     }
-    //console.debug(result);
-    return result;//this.direct?result:this.reverse(result);
+    return result;
+
   }
   decrypt(message, key) {
     if ((message == null) || (key == null))
       throw new Error('Incorrect arguments!');
     this.flag = -this.flag;
-    //message = this.direct?message:this.reverse(message)
     let result = this.encrypt(message, key);
     this.flag = -this.flag;
     return result;
