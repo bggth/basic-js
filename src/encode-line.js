@@ -11,10 +11,6 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 
-function onChar(char) {
-
-}
-
 function encodeLine(str) {
 
   let prevChar = str[0];

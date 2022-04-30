@@ -1,0 +1,24 @@
+{
+	"favorites.resources": [
+		{
+			"filePath": "src\\transform-array.js",
+			"group": "Default"
+		},
+		{
+			"filePath": "src\\sum-digits.js",
+			"group": "Default"
+		},
+		{
+			"filePath": "src\\sort-by-height.js",
+			"group": "Default"
+		},
+		{
+			"filePath": "src\\simple-chain.js",
+			"group": "Default"
+		},
+		{
+			"filePath": "src\\hanoi-tower.js",
+			"group": "Default"
+		}
+	]
+}
