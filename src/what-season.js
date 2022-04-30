@@ -21,7 +21,7 @@ function getSeason(date) {
 
   if (testDate == 'undefined')
   {
-    //throw new Error('Invalid date!');
+    throw new Error('Invalid date!');
     console.error('Invalid date!');
     return true;
   }

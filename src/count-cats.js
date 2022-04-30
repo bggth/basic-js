@@ -22,7 +22,7 @@ function countCats(matrix) {
   }
   for (let i = 0; i < matrix.length; i++) {
     cats = matrix[i];
-    console.log('cats', cats);
+    //console.log('cats', cats);
     for (let x = 0; x <= cats.length; x++) {
       if ((typeof cats[x] == 'number') && (cats[x] >= 0))
         resultCats[x] = resultCats[x] + cats[x];
@@ -31,7 +31,7 @@ function countCats(matrix) {
           resultCats[x] = 1;
           */
     }
-    console.log('resultCats', resultCats);
+    //console.log('resultCats', resultCats);
   }
 
   let sum = 0;
