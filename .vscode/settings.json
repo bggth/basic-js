@@ -1,10 +1,6 @@
 {
 	"favorites.resources": [
 		{
-			"filePath": "src\\encode-line.js",
-			"group": "Default"
-		},
-		{
 			"filePath": "src\\extended-repeater.js",
 			"group": "Default"
 		},
