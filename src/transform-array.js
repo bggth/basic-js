@@ -19,6 +19,8 @@ class MyArray {
     this.data = [];
     this.doubleNextFlag = false;
     this.discardNextFlag = false;
+    this.discardPrevFlag = false;
+    this.doublePrevFlag = false;
   }
 
   push(e) {
@@ -29,14 +31,24 @@ class MyArray {
         this.doubleNextFlag = false;
       }
 
+      if (this.doublePrevFlag) {
+        if (this.data.length > 0)
+          this.data.push(this.data[this.data.length-1]);
+        this.doublePrevFlag = false;
+      }
+
       if (this.discardNextFlag) {
+        this.data.pop();
+        this.discardNextFlag = false;
+      }
+
+      if (this.discardPrevFlag) {
         this.data.pop();
         this.discardNextFlag = false;
       }
 
       this.data.push(e);
     }
-
   }
 
   checkCommand(e) {
@@ -51,14 +63,13 @@ class MyArray {
         this.discardNextFlag = true;
         break;
       case 1:
-        this.data.pop();
+        this.discardNextFlag = true;
         break;
       case 2:
         this.doubleNextFlag = true;
         break;
       case 3:
-        if (this.data.length > 0)
-          this.data.push(this.data[this.data.length-1]);
+        this.doublePrevFlag = true;
         break;
     }
     return result;
