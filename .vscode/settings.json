@@ -1,15 +1,23 @@
 {
 	"favorites.resources": [
 		{
+			"filePath": "src\\encode-line.js",
+			"group": "Default"
+		},
+		{
+			"filePath": "src\\extended-repeater.js",
+			"group": "Default"
+		},
+		{
 			"filePath": "src\\transform-array.js",
 			"group": "Default"
 		},
 		{
-			"filePath": "src\\simple-chain.js",
+			"filePath": "src\\vigenere-cipher.js",
 			"group": "Default"
 		},
 		{
-			"filePath": "src\\hanoi-tower.js",
+			"filePath": "src\\what-season.js",
 			"group": "Default"
 		}
 	]
